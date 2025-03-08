@@ -1,0 +1,140 @@
+CRITICAL - 2025-03-08 19:20:30 --> ErrorException: require_once(../config.php): Failed to open stream: No such file or directory
+[Method: GET, Route: /]
+in APPPATH\Views\log_in.php on line 3.
+ 1 APPPATH\Views\log_in.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(../config.php): Failed to open stream: No such file or directory', 'D:\\Users\\ci\\app\\Views\\log_in.php', 3)
+ 2 APPPATH\Views\log_in.php(3): require_once()
+ 3 SYSTEMPATH\View\View.php(224): include('D:\\Users\\ci\\app\\Views\\log_in.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('log_in', [], true)
+ 6 APPPATH\Controllers\Home.php(9): view('log_in')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('D:\\Users\\ci\\public\\index.php')
+CRITICAL - 2025-03-08 20:50:10 --> ErrorException: Undefined variable $request
+[Method: POST, Route: login]
+in APPPATH\Controllers\Login.php on line 14.
+ 1 APPPATH\Controllers\Login.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $request', 'D:\\Users\\ci\\app\\Controllers\\Login.php', 14)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Users\\ci\\public\\index.php')
+CRITICAL - 2025-03-08 20:52:52 --> ErrorException: Undefined variable $request
+[Method: POST, Route: login]
+in APPPATH\Controllers\Login.php on line 14.
+ 1 APPPATH\Controllers\Login.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $request', 'D:\\Users\\ci\\app\\Controllers\\Login.php', 14)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Users\\ci\\public\\index.php')
+CRITICAL - 2025-03-08 20:54:01 --> ErrorException: Undefined variable $conn
+[Method: POST, Route: login]
+in APPPATH\Controllers\Login.php on line 21.
+ 1 APPPATH\Controllers\Login.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $conn', 'D:\\Users\\ci\\app\\Controllers\\Login.php', 21)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Users\\ci\\public\\index.php')
+ERROR - 2025-03-08 21:00:41 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in D:\Users\ci\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 D:\Users\ci\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'dbuser', Object(SensitiveParameterValue), 'spiritx', 3306, '', 0)
+#1 D:\Users\ci\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Users\ci\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Users\ci\app\Controllers\Login.php(21): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 D:\Users\ci\system\CodeIgniter.php(933): App\Controllers\Login->login()
+#5 D:\Users\ci\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#6 D:\Users\ci\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\Users\ci\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 D:\Users\ci\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 D:\Users\ci\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 D:\Users\ci\system\rewrite.php(44): require_once('D:\\Users\\ci\\pub...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in D:\Users\ci\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 D:\Users\ci\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Users\ci\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Users\ci\app\Controllers\Login.php(21): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#3 D:\Users\ci\system\CodeIgniter.php(933): App\Controllers\Login->login()
+#4 D:\Users\ci\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#5 D:\Users\ci\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 D:\Users\ci\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#7 D:\Users\ci\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#8 D:\Users\ci\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#9 D:\Users\ci\system\rewrite.php(44): require_once('D:\\Users\\ci\\pub...')
+#10 {main}
+CRITICAL - 2025-03-08 21:00:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Login.php(21): CodeIgniter\Database\BaseConnection->query('SELECT * FROM users WHERE username=\'asdf\'')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->login()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('D:\\Users\\ci\\public\\index.php')
+ERROR - 2025-03-08 21:01:17 --> mysqli_sql_exception: Table 'spiritx.users' doesn't exist in D:\Users\ci\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\Users\ci\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT * FROM u...', 0)
+#1 D:\Users\ci\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 D:\Users\ci\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 D:\Users\ci\app\Controllers\Login.php(21): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 D:\Users\ci\system\CodeIgniter.php(933): App\Controllers\Login->login()
+#5 D:\Users\ci\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#6 D:\Users\ci\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\Users\ci\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 D:\Users\ci\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 D:\Users\ci\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 D:\Users\ci\system\rewrite.php(44): require_once('D:\\Users\\ci\\pub...')
+#11 {main}
+CRITICAL - 2025-03-08 21:01:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'spiritx.users' doesn't exist
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\Login.php(21): CodeIgniter\Database\BaseConnection->query('SELECT * FROM users WHERE username=\'asd\'')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->login()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\Users\\ci\\public\\index.php')
+CRITICAL - 2025-03-08 21:01:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'spiritx.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM users WHERE username=\'asd\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM users WHERE username=\'asd\'')
+ 3 APPPATH\Controllers\Login.php(21): CodeIgniter\Database\BaseConnection->query('SELECT * FROM users WHERE username=\'asd\'')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->login()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\Users\\ci\\public\\index.php')
+CRITICAL - 2025-03-08 21:01:17 --> [Caused by] mysqli_sql_exception: Table 'spiritx.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT * FROM users WHERE username=\'asd\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM users WHERE username=\'asd\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM users WHERE username=\'asd\'')
+ 4 APPPATH\Controllers\Login.php(21): CodeIgniter\Database\BaseConnection->query('SELECT * FROM users WHERE username=\'asd\'')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->login()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Users\\ci\\public\\index.php')
