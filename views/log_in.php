@@ -1,39 +1,46 @@
 <?php 
 session_start();
-require_once('../config.php'); ?>
+require_once('../config.php');
 
-<?php
+if (isset($_POST['submit'])) {
+    $username = trim($_POST['username']);
+    $password = $_POST['password'];
+    $errors = [];
 
-    if (isset($_POST['submit'])){
+    if (empty($username)) {
+        $errors['username'] = "Username is required.";
+    }
+    if (empty($password)) {
+        $errors['password'] = "Password is required.";
+    }
 
-        $Username = $_POST['username'];
-        $Password = $_POST['password'];
-
-        $query = "SELECT * FROM users WHERE username='$Username'";
-
-        $result_log = mysqli_query($conn, $query);
-
-        while ($record = mysqli_fetch_assoc($result_log)){
-            if($record['password'] == $Password){
-
-                $_SESSION['username'] = $record['username'];
-                $_SESSION['email'] = $record['email'];
-
-                if($record['role'] == 'admin'){
+    if (empty($errors)) {
+        $query = "SELECT * FROM users WHERE username = ?";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        
+        if ($row = mysqli_fetch_assoc($result)) {
+            if (password_verify($password, $row['password'])) {
+                $_SESSION['username'] = $row['username'];
+                $_SESSION['email'] = $row['email'];
+                
+                if ($row['role'] == 'admin') {
                     header("Location: ../admin/admin.php");
                     exit;
-                }else{
+                } else {
                     header("Location: ../home.php");
                     exit;
                 }
+            } else {
+                $errors['password'] = "Incorrect password.";
             }
+        } else {
+            $errors['username'] = "Username does not exist.";
         }
-
-        echo "<script>alert('Login failed!');</script>";        
     }
-
-    
-
+}
 ?>
 
 <!DOCTYPE html>
@@ -59,23 +66,23 @@ require_once('../config.php'); ?>
             <div class="form-group1">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
+                <span class="error"><?php echo $errors['username'] ?? ''; ?></span>
             </div>
             <div class="form-group2">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
+                <span class="error"><?php echo $errors['password'] ?? ''; ?></span>
             </div>
             <div class="showp">
             
             <label for="showpassword">Show Password</label>
-            <input type="checkbox" onclick="myFunction()">
-            <script> function myFunction() {    
-                var x = document.getElementById("password");
-                if (x.type === "password") {
-                    x.type = "text";
-                } else {
-                    x.type = "password";
-                }
-            }</script>
+            <input type="checkbox" onclick="togglePassword()">
+                <script>
+                    function togglePassword() {
+                        var x = document.getElementById("password");
+                        x.type = x.type === "password" ? "text" : "password";
+                    }
+                </script>
             </div>
             <div class="form-group">
                 <center>
