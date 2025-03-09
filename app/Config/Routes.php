@@ -11,4 +11,4 @@ $routes->get('/signup', 'User::signupGet');
 $routes->post('/login', 'User::login');
 $routes->post('/signup', 'User::signup');
 $routes->get('/dashboard', 'User::dashboard');
-$routes->get('/logout', 'User::logout');
+$routes->post('/logout', 'User::logout');

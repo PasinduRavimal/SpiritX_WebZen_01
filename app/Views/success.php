@@ -32,7 +32,7 @@
         <div class="background-image"></div>
         <div class="nav-outer">
             <div class="logo-outer">
-                <a href="home.php"><img class="main-slider-logo" src="views/images/Logo.webp" alt="logo img"></a>
+                <a href="home.php"><img class="main-slider-logo" src="images/Logo.webp" alt="logo img"></a>
             </div>
             <div class="nav-bar-context">
                 <ul class="nav">
@@ -46,7 +46,7 @@
                         <a href="#">Profile</a>
                     </div>
                 </div>
-                <form action="login.php" method="post">
+                <form action="logout" method="post">
                     <button type="submit" class="logout-button">Logout</button>
                 </form>
                             
@@ -61,7 +61,7 @@
         </div>
 
         <div class="middle-anime">
-            <img class="middle-anime" src="views/images/Logo.webp"/>
+            <img class="middle-anime" src="images/Logo.webp"/>
         </div>
 
     </div>
