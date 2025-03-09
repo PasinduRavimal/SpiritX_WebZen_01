@@ -25,13 +25,11 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 *Run the following SQL script to setup and configure the database. Database server must run on the port number 3306.*
 *If it is needed to change these configurations, edit the .env file in the root folder.*
 
-```sql
 create database if not exists spiritx character set = 'utf8mb4' collate = 'utf8mb4_general_ci';
 
 grant all privileges on spiritx.* to 'dbuser'@'%' identified by password '*B0155F6F58E532260B9D1FEA278B5872D90431EE';
 
 use spiritx;
-```
 
 *Then run the following command inside the root directory.*
 
