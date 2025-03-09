@@ -1,0 +1,102 @@
+body{
+    background-color: rgb(0, 0, 0);
+    font-family: 'Segoe UI';
+    background-size: cover;
+    font-size:20px;
+  }
+ 
+.container{
+    position: relative;
+}
+
+.info{
+    position: absolute;
+    padding-left: 40px;
+    color: #382b8e;
+    z-index: 1;
+}
+
+.bg{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("background.avif");
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 70%;
+    filter: blur(10px);
+    z-index: -1;
+}
+.bg img{
+    width: 120%;
+    height: 120%;
+}
+
+.Webzen-logo{
+    position: absolute;
+    right:0%;
+    top: 0%;
+}
+.Webzen-logo img{
+    width: 200px;
+    height: 200px;
+
+}
+
+button{
+    background-color:#362E69;
+    height: 45px;
+    width: 100px;
+    border: none;
+    margin-right: 1%;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-weight: 900;
+}
+
+button:hover{
+    background-color:#2d1491;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    button {
+        background-color: #362E69;
+        margin-right: 1%;
+        color: whitesmoke;
+    }
+
+    button:hover {
+        background-color: #2d1491;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 770px) {
+    body {
+        padding: 5%;
+    }
+
+    div {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    button {
+        background-color: #362E69;
+        margin: 5px 0;
+        color: whitesmoke;
+    }
+
+    button:hover {
+        background-color: #2d1491;
+    }
+
+    img {
+        width: 100%; 
+        margin-left: 0; 
+    }
+}

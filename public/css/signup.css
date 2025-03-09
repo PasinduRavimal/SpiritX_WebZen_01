@@ -1,0 +1,22 @@
+.form-group {
+    padding: 5px 20px 20px 20px;
+}
+
+.form-group3 {
+    padding: 15px 20px 5px 20px;
+}
+
+.form-group3 label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group3 input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
