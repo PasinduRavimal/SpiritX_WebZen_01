@@ -27,23 +27,23 @@
             <div class="form-group1">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
+                <span class="error"><?php echo $errors['username'] ?? ''; ?></span>
             </div>
             <div class="form-group2">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
+                <span class="error"><?php echo $errors['password'] ?? ''; ?></span>
             </div>
             <div class="showp">
             
             <label for="showpassword">Show Password</label>
-            <input type="checkbox" onclick="myFunction()">
-            <script> function myFunction() {    
-                var x = document.getElementById("password");
-                if (x.type === "password") {
-                    x.type = "text";
-                } else {
-                    x.type = "password";
-                }
-            }</script>
+            <input type="checkbox" onclick="togglePassword()">
+                <script>
+                    function togglePassword() {
+                        var x = document.getElementById("password");
+                        x.type = x.type === "password" ? "text" : "password";
+                    }
+                </script>
             </div>
             <div class="form-group">
                 <center>
