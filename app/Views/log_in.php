@@ -15,9 +15,15 @@
     <div class="container">
         <form action="login" method="post">
 
-            <div class="form-header">
-                <h2>Login</h2>
-            </div>
+            <?php if (session()->getFlashdata('error') != NULL): ?>
+                <div class="form-header">
+                    <h2><?php echo session()->getFlashdata('error') ?></h2>
+                </div>
+            <?php else: ?>
+                <div class="form-header">
+                    <h2>Login</h2>
+                </div>
+            <?php endif; ?>
             <div class="form-group1">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -45,7 +51,7 @@
                 </center>    
             </div>
             <div class="form-footer">
-                <p>Don't have an account? <a href="signup.php">Sign up</a></p>
+                <p>Don't have an account? <a href="signup">Sign up</a></p>
                 <p><a href="forgot.php">Forgot password?</a></p>
             </div>
 
