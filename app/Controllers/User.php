@@ -24,6 +24,17 @@ class User extends BaseController
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
+        if ($username == NULL || $password == NULL){
+            $errors = array();
+
+            if ($username == NULL){
+                $errors['username'] = "Must provide a username.";
+            } else {
+                $errors['password'] = "Must provide a password.";
+            }
+            return view('log_in', $errors);
+        }
+
         $user = $userModel->where('username', $username)->first();
 
         if ($user && password_verify($password, $user['password'])) {
@@ -32,16 +43,21 @@ class User extends BaseController
                 'username' => $user['username'],
                 'logged_in' => true,
             ]);
-            return view('success');
+            return view('success', ['username' => $user['username']]);
         } else {
-            $session->setFlashdata('error', 'Invalid username or password');
-            return view('log_in');
+            $errors = array();
+
+            if (!$user) {
+                $errors['username'] = 'User does not exist.';
+            } else {
+                $errors['password'] = "Password is incorrect.";
+            }
+            return view('log_in', $errors);
         }
     }
 
     public function signup()
     {
-        $session = session();
         $userModel = new UserModel();
 
         $data = [
@@ -50,8 +66,14 @@ class User extends BaseController
         ];
 
         if ($data['username'] == NULL || $data['password'] == NULL){
-            $session->setFlashData('error', 'Please provide all the values.');
-            return view('signup');
+            $errors = array();
+
+            if ($data['username'] == NULL){
+                $errors['username'] = "Must provide a username.";
+            } else {
+                $errors['password'] = "Must provide a password.";
+            }
+            return view('signup', $errors);
         }
 
         $db = db_connect();
@@ -59,13 +81,33 @@ class User extends BaseController
         $user = $userModel->where('username', $data['username'])->first();
 
         if ($user != NULL) {
-            $session->setFlashData('error', 'User already exists!');
-            return view('signup');
+            $errors = array();
+
+            $errors['username'] = "Username already exists.";
+
+            return view('signup', $errors);
         }
 
         $userModel->save($data);
 
-        $session->setFlashData('error', 'Signup Complete! Please login.');
         return view('log_in');
+    }
+
+    public function logout()
+    {
+        $session = session();
+        $session->destroy();
+        return view('entry');
+    }
+
+    public function dashboard()
+    {
+        $session = session();
+
+        if (!$session->logged_in){
+            return view('entry');
+        }
+
+        return view('success', ['username' => $session->username]);
     }
 }

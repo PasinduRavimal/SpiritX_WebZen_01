@@ -4,7 +4,7 @@
 <title></title>
 <link rel="icon" type="image/x-icon" href="favicon.png">
 
-<link rel="stylesheet" href="landing.css">
+<link rel="stylesheet" href="css/landing.css">
 <script src="https://kit.fontawesome.com/a65b5ae8d1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -36,14 +36,14 @@
             </div>
             <div class="nav-bar-context">
                 <ul class="nav">
-                    <li><span><a href="home.php">Home</a></span></li>
-                    <li><span><a href="ContactUs.php">Contact Us</a></span></li>
-                    <li><span><a href="AboutUs.php">About Us</a></span></li>
+                    <li><span><a href="home">Home</a></span></li>
+                    <li><span><a href="ContactUs">Contact Us</a></span></li>
+                    <li><span><a href="AboutUs">About Us</a></span></li>
                 </ul>
                 <div class="user-dropdown">
                     <button class="user-button"><i class="fa-solid fa-user"><p><?php echo $username; ?></p></i></button>
                     <div class="dropdown-content">
-                        <a href="login.php">Logout</a>
+                        <a href="logout">Logout</a>
                     </div>
                 </div>            
             </div>
@@ -64,7 +64,7 @@
 
     
         <div class="footer-bottom">
-            <p>&copy; 2024 NexusTech Solutions</p>
+            <p>&copy; 2025 Webzen Solutions</p>
         </div>
     </footer>
 

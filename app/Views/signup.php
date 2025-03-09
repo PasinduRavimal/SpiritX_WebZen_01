@@ -29,27 +29,20 @@
         <div class="container">
 
         <form action="signup" method="post">
-
-        <?php if (session()->getFlashdata('error') != NULL): ?>
-                <div class="form-header">
-                    <h2><?php echo session()->getFlashdata('error'); ?></h2>
-                </div>
-            <?php else: ?>
-                <div class="form-header">
-                    <h2>Signup</h2>
-                </div>
-            <?php endif; ?>
+        <div class="form-header">
+            <h2>Signup</h2>
+        </div>
         <div class="form-group1">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required oninput="this.setCustomValidity('')">
-            <span class="error"><?php echo $errors['username'] ?? ''; ?></span> <br>
+            <span class="error"><?php echo $username ?? ''; ?></span> <br>
         </div>
 
         <div class="form-group2">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required onkeyup="validatePassword()">
             <progress id="strength-bar" value="0" max="4"></progress>
-            <span class="error"><?php echo $errors['password'] ?? ''; ?></span>
+            <span class="error"><?php echo $password ?? ''; ?></span>
         </div>
         <div class="form-group3">
             <label for="password">Confirm password:</label>

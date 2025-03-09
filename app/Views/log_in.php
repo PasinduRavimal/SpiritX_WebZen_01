@@ -14,25 +14,18 @@
     </div>
     <div class="container">
         <form action="login" method="post">
-
-            <?php if (session()->getFlashdata('error') != NULL): ?>
-                <div class="form-header">
-                    <h2><?php echo session()->getFlashdata('error') ?></h2>
-                </div>
-            <?php else: ?>
-                <div class="form-header">
-                    <h2>Login</h2>
-                </div>
-            <?php endif; ?>
+            <div class="form-header">
+                <h2>Login</h2>
+            </div>
             <div class="form-group1">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
-                <span class="error"><?php echo $errors['username'] ?? ''; ?></span>
+                <span class="error"><?php echo $username ?? ''; ?></span>
             </div>
             <div class="form-group2">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
-                <span class="error"><?php echo $errors['password'] ?? ''; ?></span>
+                <span class="error"><?php echo $password ?? ''; ?></span>
             </div>
             <div class="showp">
             
